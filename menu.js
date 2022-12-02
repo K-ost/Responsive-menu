@@ -81,19 +81,34 @@ class FlexibleMenu {
           }
         }
       })
-
-      if (this.openPopup) {
-        document.querySelector('.responsive-nav__more a').addEventListener('click', this.clickOnNav)
-        // document.body.addEventListener('click', e => {
-        //   console.log(e)
-        //   let div = e.target.parentElement.parentElement
-        //   if (!div.classList.contains('responsive-nav__popup')) {
-        //     div.parentElement.classList.remove('opened')
-        //   }
-        // })
-      }
     }
+
+    // Mobile
+    if (window.innerWidth < 400) {
+      popup.innerHTML = ''
+      FlexibleMenu.items.forEach(el => {
+        let link = el.children[0].getAttribute('href')
+        let newItem = document.createElement('li')
+        newItem.innerHTML = `
+          <a href="${link}">${el.innerText}</a>
+        `
+        popup.append(newItem)
+        el.remove()
+      })
+    }
+
+    // if openPopup activated
+    if (this.openPopup) {
+      document.querySelector('.responsive-nav__more a').addEventListener('click', this.clickOnNav)
+      document.addEventListener('mouseup', e => {
+        if (!e.target.closest('.responsive-nav__popup')) {
+          document.querySelector('.responsive-nav__more').classList.remove('opened')
+        }
+      })
+    }
+
   }
+
 
   // clickOnNav
   clickOnNav(e) {
