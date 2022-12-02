@@ -37,6 +37,7 @@ It needs to be added to the custom js file
 ```js script
   const menu = new FlexibleMenu({
     el: '#id',
+    moreText: "More",
     openPopup: false
   })
 ```
@@ -46,4 +47,5 @@ HTML code must be like this
 Property      | Type    | Description                                                    | Default value
 ------------- | ------- | -------------------------------------------------------------- | --------
 **el**        | string  | ID of your element. Just like this '#id'                       | -
+**moreText**  | string  | The text of more button                                        | "More"
 **openPopup** | boolean | This option opens the "more" popup on click. Default by hover. | false
