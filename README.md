@@ -43,25 +43,7 @@ It needs to be added to the custom js file
 
 # API Documentation
 HTML code must be like this
-```html
-  <table>
-    <tr>
-      <th>Property</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default value</th>
-    </tr>
-    <tr>
-      <th><b>el</b></td>
-      <td>string</td>
-      <td>ID of your element. Just like this '#id'</td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <th><b>openPopup</b></td>
-      <td>boolean</td>
-      <td>This option opens the "more" popup on click. Default by hover.</td>
-      <td>false</td>
-    </tr>
-  </table>
-```
+Property      | Type    | Description                                                    | Default value
+------------- | ------- | -------------------------------------------------------------- | --------
+**el**        | string  | ID of your element. Just like this '#id'                       | -
+**openPopup** | boolean | This option opens the "more" popup on click. Default by hover. | false
